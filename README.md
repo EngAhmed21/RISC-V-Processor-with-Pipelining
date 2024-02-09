@@ -1,5 +1,7 @@
 # RISC-V-Processor-with-Pipelining
 
+Implementation of the pipelined RISC V processor with many useful features as fully bypassing, dynamic branch prediction, single and multi cycle instructions, ALU unit works in parallel with a multiplication unit, and Reorder Buffer to guarantee in-order termination.
+
 For details about ISA and the supported instructions, check out my previous project: https://github.com/EngAhmed21/RISC-V-Single-Cycle-Processor/blob/main/README.md
 
 This design is an extention to my last 2 projects: RISC V Single-Cycle and RISC V Multi-Cycle. This design uses pipelining to increase Throughput
