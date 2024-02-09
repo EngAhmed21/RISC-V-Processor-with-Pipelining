@@ -1,0 +1,21 @@
+00A00313  // addi t1, zero, 10
+001A8A93  // addi s5, s5, 1 : start
+00000A13  // addi s4, zero, 0 
+03200913  // addi s2, zero, 50 
+02800993  // addi s3, zero, 40
+03200293  // addi t0, zero, 50
+025A0063  // beq s4, t0, end
+013904B3  // add s1, s2, s3
+00902023  // sw s1, 0(zero)
+00190913  // addi s2, s2, 1
+FFE98993  // addi s3, s3, -2
+00000013  // addi zero, zero, 0
+001A0A13  // addi s4, s4, 1
+FE5FF0EF  // jal ra, loop
+ABCDE4B7  // lui s1, 0xABCDE : end
+00902023  // sw s1, 0(zero)
+00000483  // lb s1, 0(zero)
+00902023  // sw s1, 0(zero)
+FA6A9EE3  // bne s5, t1, start
+FFFFF4B7  // lui s1, 0xFFFFF
+00902023  // sw s1, 0(zero)
