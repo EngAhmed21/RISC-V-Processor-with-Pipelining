@@ -20,7 +20,7 @@ module BTB #(parameter SIZE = 1024) (
     always @(negedge clk) begin
         if (!rstn)
             for (i = 0; i < SIZE; i = i + 1)
-                buffer[i] <= 0;
+                buffer[i] = 0;
         else if (PCSrc[1])
             buffer[PC_EX[(INDEX-1):0]] <= {1'b1, 1'b1, PC_EX[29:INDEX], aluResultE};
         else if (PCSrc[0])

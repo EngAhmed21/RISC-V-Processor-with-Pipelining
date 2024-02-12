@@ -16,11 +16,11 @@ module ALU (
             ADD:    ALU_out = A + B;
             SUB:    ALU_out = A - B;
             SLL:    ALU_out = (A << B[4:0]);
-            SLT:    ALU_out = (A < B);
-            SLTU:   ALU_out = ($unsigned(A) < $unsigned(B));
+            SLT:    ALU_out = {31'b0,A < B};
+            SLTU:   ALU_out = {31'b0,$unsigned(A) < $unsigned(B)};
             XOR:    ALU_out = A ^ B;
             SRL:    ALU_out = (A >> B);
-            SRA:    ALU_out = {A[31], (A >> B)};
+            SRA:    ALU_out = ($signed(A) >> B);
             OR:     ALU_out = A | B;
             AND:    ALU_out = A & B;
             default:   ALU_out = 32'd0;

@@ -34,9 +34,11 @@ module TOP_MODULE (
      .PC_targetE(PC_targetE), .PC_plus4E(PC_plus4E), .I_WD(I_WD), .BTB_targetE(BTB_targetE), .aluResultE(aluResultE), .PC(PCF),
      .PC_plus4F(PC_plus4F), .instr(instrF));
 
+   wire	       rstfd = (!rstn) || (flushD);
+   
     // F-D reg
-    always @(posedge clk, negedge rstn) begin
-        if ((!rstn) || (flushD)) begin
+    always @(posedge clk or posedge rstfd) begin
+        if (rstfd) begin
             PCD        <= 0;                    PC_plus4D   <= 0;
             instrD     <= 0;                    BTB_jumpD   <= 0;
             BTB_validD <= 0;                    BTB_targetD <= 0;
