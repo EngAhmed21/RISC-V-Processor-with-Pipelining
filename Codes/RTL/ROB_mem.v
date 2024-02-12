@@ -18,7 +18,7 @@ module ROB_mem #(parameter ADDR = 7) (
     assign hValidEntry = ROB_MEM[head_ptr[(ADDR-1):0]][113];
     assign hValidR     = ROB_MEM[head_ptr[(ADDR-1):0]][32];
     assign hValidM     = ROB_MEM[head_ptr[(ADDR-1):0]][33];
-    assign branch      = ROB_MEM[head_ptr[(ADDR-1):0]][34];
+    wire   branch      = ROB_MEM[head_ptr[(ADDR-1):0]][34];
     assign head_valid  = (hValidEntry & (hValidR | hValidM | branch));
 
     // clk_en
