@@ -29,7 +29,7 @@ module BHB #(parameter SIZE = 1024) (
     always @(negedge clk) begin
         if (!rstn)
             for (i = 0; i < SIZE; i = i + 1)
-                buffer[i] <= 1;    // initialy weakly not takenF
+                buffer[i] = 1;    // initialy weakly not takenF
         else if (branch)
             buffer[PC_EX[(INDEX-1):0]] <= {1'b1, PC_EX[29:INDEX], predict_EX};
     end
